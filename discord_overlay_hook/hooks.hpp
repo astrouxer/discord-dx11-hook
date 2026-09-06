@@ -18,7 +18,7 @@ namespace Hooks
 
     LRESULT __stdcall hkWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) 
     {
-        if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
+        if (menu && ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
             return true;
 
         return CallWindowProc(oWndProc, hWnd, msg, wParam, lParam);
